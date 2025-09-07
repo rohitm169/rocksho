@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rockshoe</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- sliding search bar start -->
+   <div id="searchBar" class="search-bar">
+    <input type="text" placeholder="Search..." />
+    <button>Search</button>
+    <button class="close-btn" onclick="hideSearchBar()" style="background: none; border: none; margin-top: 11px ;">✖</button>
+  </div>
+  <!-- top nav bar -->
+  <div class="top-bar">
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-pinterest-p"></i></a>
+    </div>
+    <h5>Special Offer: Free Shipping on all the orders above $100</h5>
+    <div class="nav-links">
+      <a href="#contact">Contact</a>
+      <button class="cart-btn" onclick="toggleCart()">Cart</a></button>
+      <a onclick="openPopup()">Login</a>
+    </div>
+    <!-- top 2 nav bar -->
+  </div>
+  <header class="headd">
+    <div class="logo">
+      <h1>Rocksho</h1>
+    </div>
+    <nav class="navlink">
+      <a href="#">Home </a>
+      <a href="#">Men</a>
+      <a href="#">Women</a>
+      <a href="#">Page </a>
+      <a href="#">Shop</a>
+      <a href="#">Sale</a>
+    </nav>
+     <div class="icons">
+      <a href="#"><i class="fas fa-user"onclick="openPopup()"></i></a>
+      <button class="cart-btn" onclick="toggleCart()" style="background: none; border: none; font-size: 20px; cursor: pointer;"><i class="fas fa-shopping-cart"></i></button>
+      <a href="#" id="open-search" onclick="showSearchBar()"><i class="fas fa-search"></i></a>
+    </div>
+  </header>
+  <!-- div box images -->
+<div class="slider-container">
+    <div class="slider-wrapper" id="sliderWrapper">
+      <!-- Slide 1 -->
+      <div class="slide">
+        <img src="shoes1.jpg" />
+        <img src="shoes2.jpg" />
+        <img src="shoes3.jpg" />
+        <img src="shoes4.jpg" />
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide">
+        <img src="shoes2.jpg" />
+        <img src="shoes6.jpg" />
+        <img src="shoes7.jpg" />
+        <img src="shoes9.jpg" />
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide">
+        <img src="shoes4.jpg" />
+        <img src="shoes8.jpg" />
+        <img src="shoes7.jpg" />
+        <img src="shoes10.jpg" />
+      </div>
+    </div>
+  </div>
+  <!-- registration box -->
+  <!-- dot slider -->
+   <div class="dots">
+    <span class="dot active" onclick="showSlide(0)"></span>
+    <span class="dot" onclick="showSlide(1)"></span>
+    <span class="dot" onclick="showSlide(2)"></span>
+  </div>
+  <!-- 2nd slider container -->
+  <div class="slider-container2">
+    <div class="slider-wrapper2" id="sliderWrapper2">
+      <!-- Slide 1 -->
+      <div class="slide2">
+        <img src="shoes1.jpg" />
+        <img src="shoes2.jpg" />
+        <img src="shoes3.jpg" />
+        <img src="shoes4.jpg" />
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide2">
+        <img src="shoes2.jpg" />
+        <img src="shoes6.jpg" />
+        <img src="shoes7.jpg" />
+        <img src="shoes9.jpg" />
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide2">
+        <img src="shoes4.jpg" />
+        <img src="shoes8.jpg" />
+        <img src="shoes7.jpg" />
+        <img src="shoes10.jpg" />
+      </div>
+    </div>
+  </div>
+  <!-- 2nd doted slider -->
+
+  <div class="dots2">
+    <span class="dot2 active2" onclick="showSlide2(0)"></span>
+    <span class="dot2" onclick="showSlide2(1)"></span>
+    <span class="dot2" onclick="showSlide2(2)"></span>
+  </div>
+  <div class="overlay" id="popup">
+    <div class="log">
+      <span class="close" onclick="closePopup()">&times;</span>
+
+      <!-- Login Form -->
+      <div id="loginForm">
+        <h2>Login</h2>
+        <input type="text" id="loginUser" placeholder="Username">
+        <input type="password" id="loginPass" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="loginMsg" class="message"></p>
+        <div class="linkl">
+          Not registered? <a onclick="showRegister()">Register here</a>
+        </div>
+      </div>
+
+      <!-- Register Form -->
+      <div id="registerForm" class="hidden1">
+        <h2>Register</h2>
+        <input type="text" id="regUser" placeholder="Username">
+        <input type="email" id="regEmail" placeholder="Email">
+        <input type="password" id="regPass" placeholder="Password">
+        <button onclick="register()">Register</button>
+        <p id="regMsg" class="message"></p>
+        <div class="linkl">
+          Already registered? <a onclick="showLogin()">Login here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+  <!-- offer div -->
+  <div id="vall">
+    <div id="off">
+      <div class="mail">
+        <div id="coupon"><p id="ofr">10% OFF Discount Coupons</p>
+        <p id="sub">Subscribe us to get 10% OFF on all the purchases</p>
+        </div>
+      </div>
+      <div class="mail">
+        <div id="btn"><button id="btnm"><span><a href="#contact">EMAIL</a></span></button>
+        <div id="offten">
+          <p id="of">10%OFF</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+  <!-- feature product -->
+  <div id="feature">
+    <div class="feature1"><p class="f1">FEATURED PRODUCTS</p></div>
+  </div>
+  <br>
+  <!-- cart div -->
+  <div class="cart">
+     <div class="product">
+      <div class="box" id="cart1" ></div>
+      <h3>Product 1</h3>
+      <p>$10</p>
+      <a href=""><p style="background-color: green; border-radius: 5px; height: 20px; color: white; display: none;" id="buy">
+        <i class="fa-solid fa-cart-shopping"></i>buy now</p></a>
+      <button onclick="addToCart('Product 1', 10, 'shoes1.jpg')" class="btn btn-success" id="carticon" style="cursor: pointer;">
+        <i class="fas fa-cart-plus"></i>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <div class="box" id="cart2"></div>
+      <h3>Product 2</h3>
+      <p>$15</p>
+      <a href=""><p style="background-color: green; border-radius: 5px; height: 20px; color: white; display: none;" id="buy2">
+        <i class="fa-solid fa-cart-shopping"></i>buy now</p></a>
+      <button onclick="addToCart('Product 2', 15, 'shoes2.jpg')" class="btn btn-success" id="carticon2" style="cursor: pointer;">
+        <i class="fas fa-cart-plus"></i>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <div class="box" id="cart3"></div>
+      <h3>Product 3</h3>
+      <p>$20</p>
+      <a href=""><p style="background-color: green; border-radius: 5px; height: 20px; color: white; display: none;" id="buy3">
+        <i class="fa-solid fa-cart-shopping"></i>
+       buy now</p></a>
+      <button onclick="addToCart('Product 3', 20, 'shoes3.jpg')"  class="btn btn-success" id="carticon3" style="cursor: pointer;">
+        <i class="fas fa-cart-plus"></i>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <div class="box" id="cart4">
+      </div>
+      <h3>Product 4</h3>
+      <p>$20</p>
+      <a href=""><p style="background-color: green; border-radius: 5px; height: 20px; color: white; display: none;" id="buy4">
+        <i class="fa-solid fa-cart-shopping"></i>buy now</p></a>
+      <button onclick="addToCart('Product 4', 25, 'shoes4.jpg')"  class="btn btn-success" id="carticon4" style="cursor: pointer;">
+        <i class="fas fa-cart-plus"></i>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <div class="box" id="cart5"></div>
+      <h3>Product 5</h3>
+      <p>$20</p>
+      <a href=""><p style="background-color: green; border-radius: 5px; height: 20px; color: white; display: none;" id="buy5">
+        <i class="fa-solid fa-cart-shopping"></i>buy now</p></a>
+      <button onclick="addToCart('Product 5', 30, 'shoes5.jpg')"  class="btn btn-success" id="carticon5" style="cursor: pointer;">
+        <i class="fas fa-cart-plus"></i>Add to Cart</button>
+    </div>
+    <div>
+  <!-- 2nd div...... -->
+  <!-- cart page..... -->
+   <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+   <!-- popup cart -->
+    <div class="cart-popup" id="cartPopup">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <button class="close-popup" onclick="toggleCart()">Close</button>
+  </div>
+
+  <br><br><br>
+  <div id="big">
+    <div class="big1"></div>
+    <div class="big2"></div>
+  </div><br><br><br>
+  <div id="ebar">
+    <div class="ebar1"><span id="etxt">LATEST PRODUCTS</span></div>
+    <!-- <div class="ebar1"><span id="etxt1">VIEW ALL</span></div> -->
+    <div class="feature1"><p class="f2" id="valll"><a href="">VIEW ALL</a></p></div>
+  </div>
+  <br>
+  <div class="end">
+    <div class="endimg">
+        <img src="shoes1.jpg" />
+        <img src="shoes2.jpg" />
+        <img src="shoes3.jpg" />
+        <img src="shoes4.jpg" />
+        <img src="shoes3.jpg" />
+    </div>
+  </div>
+  <br><br>
+    <div id="cartimg" >
+      <div id="cartimg1" class="box hidden">
+      </div>
+       <div id="cartimg2" class="box hidden">
+      </div>
+        <div id="cartimg3" class="box hidden">
+      </div>
+         <div id="cartimg4" class="box hidden">
+      </div>
+          <div id="cartimg5" class="box hidden">
+      </div>
+  </div> 
+  <br>
+      <div class="contact" id="contact">
+        <div class="contbox">
+          <center><h1>Contact Me</h1></center>
+          <center><hr style="width: 20%; border-color: black; height: 3px; background: black;"></center><br>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" style="border-color: black;" required>
+                    <input type="email" placeholder="Your Email" style="border-color: black;" required>
+                    <textarea placeholder="Your Message" style="border-color: black;" required></textarea>
+                    <center><button type="submit" class="btn1">
+                     <span>Send Message</span></button></center>
+                </form>
+            </div>
+        </div>
+      </div>
+  <div class="footer" style="background-color: rgba(0, 0, 0, 0.663); color: white;">
+    <div class="foot">
+      <ul id="ulist">
+       <b><li style="font-size: 20px;">info</li></b>
+       <a href=""><li style="font-size: 15px; color: white;">Track Your Order</li></a>
+        <a href=""><li style="font-size: 15px; color: white;">Our Blog</li></a>
+        <a href=""><li style="font-size: 15px; color: white;">Privacy policy</li></a>
+       <a href=""><li style="font-size: 15px; color: white;"> Shipping</li></a>
+        <a href=""><li style="font-size: 15px; color: white;">Contact Us</li></a>
+       <a href=""><li style="font-size: 15px; color: white;"> Help</li></a>
+        <a href=""><li style="font-size: 15px; color: white;">Community</li></a>
+      </ul>
+    </div>
+    <div class="foot">
+      <ul id="ulist2">
+        <b><li  style="font-size: 20px;">About</li></b>
+       <li style="font-size: 15px;"> History</li>
+        <li style="font-size: 15px;">Our Team</li>
+        <li style="font-size: 15px;">Services</li>
+        <li style="font-size: 15px;">Company</li>
+        <li style="font-size: 15px;">Manufacture</li>
+        <li style="font-size: 15px;">Wholesale</li>
+        <li style="font-size: 15px;">Retail</li>
+      </ul>
+    </div>
+    <div class="foot">
+      <ul id="ulist3">
+       <b><li style="font-size: 20px;"> Women Shoes</li></b>
+        <li style="font-size: 15px;">Track Your Order</li>
+       <li style="font-size: 15px;"> Our Blog</li>
+        <li style="font-size: 15px;">Privacy policy</li>
+        <li style="font-size: 15px;">Shipping</li>
+        <li style="font-size: 15px;">Contact Us</li>
+        <li style="font-size: 15px;">Help</li>
+        <li style="font-size: 15px;">Community</li>
+      </ul>
+    </div>
+    <div class="foot">
+      <ul id="ulist4">
+        <b><li style="font-size: 20px;">Popular</li></b>
+        <li style="font-size: 15px;">Prices Drop</li>
+        <li style="font-size: 15px;">New Products</li>
+        <li style="font-size: 15px;">Best Sales</li>
+        <li style="font-size: 15px;">Stores</li>
+       <li style="font-size: 15px;"> Login</li>
+        <li style="font-size: 15px;">Cart</li>
+      </ul>
+    </div>
+    <div class="foot">
+      <ul id="ulist5">
+        <b><li style="font-size: 20px;">Mens Collection</li></b>
+        <li  style="font-size: 15px;">Delivery</li>
+       <li style="font-size: 15px;"> About Us</li>
+        <li style="font-size: 15px;">Shoes</li>
+        <li style="font-size: 15px;">Contact Us</li>
+      </ul>
+    </div>
+    <div class="foot">
+      <ul id="ulist6">
+        <b><li style="font-size: 20px;">Get In Touch</li></b>
+        <li  style="font-size: 15px;">Stylish Online Store 123 Main Street, Toulouse - France.
+        Call us: (+33) 800 456 789-987</li>
+       <li style="font-size: 15px;"> contact@yourwebsite.com</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="fbar" style="background-color: rgba(0, 0, 0, 0.663); color: white; margin-top: -20px;">
+    <div class="fbar1">
+      <span class="fb1">© Copyright Stylish 2023.</span>
+    </div>
+    <div class="fbar2">
+      <span class="fb2">Free HTML by TemplatesJungle </span><br>
+
+      <span class="fb2">Distributed by ThemeWagon</span>
+    </div>
+    
+  </div>
+  <script src="index.js">
+</script>
+</body>
+</html>
